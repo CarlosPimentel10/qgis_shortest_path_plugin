@@ -1,0 +1,60 @@
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore Python bytecode and cache
+__pycache__/
+*.py[cod]
+
+# Ignore compiled UI and resource files
+*.qrc
+*.ui
+*.pyc
+
+# Ignore resource compilation output
+resources.py
+
+# Ignore virtual environment folders
+venv/
+env/
+.idea/
+.vscode/
+
+# Ignore log and debug files
+*.log
+*.bak
+*.swp
+
+# Ignore QGIS-specific temporary files
+.qgis2/
+.qgis3/
+.qgis/
+
+# Ignore test output and coverage reports
+htmlcov/
+.coverage
+*.cover
+.tox/
+nosetests.xml
+coverage.xml
+*.egg-info/
+
+# Ignore deployment files (optional)
+*.zip
+*.tar.gz
+
+# Ignore QGIS Plugin Builder generated folders
+dist/
+build/
+
+# Ignore any user-specific configurations
+*.local
+
+# Ignore your plugin metadata
+*.cfg
+
+# Ignore node_modules (if using Node.js/JavaScript for web integration)
+node_modules/
+
+# Ignore potential macOS-specific files
+*.DS_Store
