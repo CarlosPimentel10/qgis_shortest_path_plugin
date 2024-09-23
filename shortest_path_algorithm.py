@@ -30,11 +30,12 @@ __copyright__ = '(C) 2024 by Carlos Pimentel / Freelancer'
 
 __revision__ = '$Format:%H$'
 
-from qgis.PyQt.QtCore import QCoreApplication
-from qgis.core import (QgsProcessing,
+from qgis.PyQt.QtCore import QCoreApplication # type: ignore
+from qgis.core import (QgsProcessing, # type: ignore
                        QgsFeatureSink,
                        QgsProcessingAlgorithm,
                        QgsProcessingParameterFeatureSource,
+                       QgsProcessingParameterPoint,
                        QgsProcessingParameterFeatureSink)
 
 
@@ -74,6 +75,31 @@ class ShortestPathAlgorithm(QgsProcessingAlgorithm):
                 [QgsProcessing.TypeVectorAnyGeometry]
             )
         )
+
+        # Input Network Layer
+        self.addParameter(
+            QgsProcessingParameterFeatureSource(
+                self.INPUT,
+                self.tr('Input Network Layer'),
+                [QgsProcessing.TypeVectorLine]
+                )
+            )
+        
+        # Start Point
+        self.addParameter(
+            QgsProcessingParameterPoint(
+                'START POINT',
+                self.tr('Start Point')
+                )
+            )
+        
+        # End Point
+        self.addParameter(
+            QgsProcessingParameterPoint(
+                'END POINT',
+                self.tr('End Point')
+                )
+            )
 
         # We add a feature sink in which to store our processed features (this
         # usually takes the form of a newly created vector layer when the
