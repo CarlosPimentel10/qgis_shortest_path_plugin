@@ -58,3 +58,5 @@ node_modules/
 
 # Ignore potential macOS-specific files
 *.DS_Store
+
+resources.qrc export-ignore
